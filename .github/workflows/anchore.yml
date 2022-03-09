@@ -28,5 +28,5 @@ jobs:
     - name: Run the Anchore scan action itself with GitHub Advanced Security code scanning integration enabled
       uses: anchore/sbom-action@v0
       with:
-        image: "ghcr.io/sigstore-hello:latest"
+        image: "ghcr.io/bananth2008/sigstore-hello:latest"
         artifact-name: sbom.spdx    
