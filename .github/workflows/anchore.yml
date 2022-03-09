@@ -29,4 +29,6 @@ jobs:
       uses: anchore/sbom-action@v0
       with:
         image: "ghcr.io/bananth2008/sigstore-hello:latest"
+        registry-username: bananth2008
+        password: ${{secrets.github_token}}
         artifact-name: sbom.spdx    
