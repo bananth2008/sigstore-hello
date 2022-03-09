@@ -29,8 +29,4 @@ jobs:
       uses: anchore/sbom-action@v0
       with:
         image: "ghcr.io/sigstore-hello:latest"
-        acs-report-enable: true
-    - name: Upload Anchore Scan Report
-      uses: github/codeql-action/upload-sarif@v1
-      with:
-        sarif_file: results.sarif
+        artifact-name: sbom.spdx    
