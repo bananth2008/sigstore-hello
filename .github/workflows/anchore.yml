@@ -29,6 +29,6 @@ jobs:
       uses: anchore/sbom-action@v0.7.0
       with:
         image: ghcr.io/bananth2008/sigstore-hello:latest
-        registry_username: bananth2008
-        registry_password: ${{secrets.GITHUB_TOKEN}}
+        registry-username: bananth2008
+        registry-password: ${{secrets.GITHUB_TOKEN}}
         
