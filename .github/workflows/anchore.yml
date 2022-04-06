@@ -39,7 +39,7 @@ jobs:
         uses: actions/download-artifact@v2
       
       - name: Generate Provinenace
-        uses: philips-labs/salsa-provenance-action@v0.7.2
+        uses: philips-labs/slsa-provenance-action@v0.7.2
         with:
           command: generate
           sub-command: files
