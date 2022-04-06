@@ -41,14 +41,16 @@ jobs:
           path: artifact/
       
       - name: Generate Provinenace
-        uses: slsa-framework/github-actions-demo@v0.1
+        uses: philips-labs/slsa-provenance-action@v0.7.2
         with:
-          artifact_path: artifact/
+          command: generate
+          subcommand: files
+          arguments: --artifact-path artifact/ 
           
       - name: Upload Provenance
         uses: actions/upload-artifact@v3
         with:
-          path: build.provenance
+          path: provenance.json
       
       
     
