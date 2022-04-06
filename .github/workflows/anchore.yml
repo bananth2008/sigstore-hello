@@ -43,7 +43,7 @@ jobs:
       - name: Generate Provinenace
         uses: slsa-framework/github-actions-demo@v0.1
         with:
-          artifact-path: artifact/
+          artifact_path: artifact/
           
       - name: Upload Provenance
         uses: actions/upload-artifact@v3
