@@ -37,11 +37,13 @@ jobs:
     steps:
       - name: Download Build Artifact
         uses: actions/download-artifact@v3
+        with:
+          path: artifact/
       
       - name: Generate Provinenace
         uses: slsa-framework/github-actions-demo@v0.1
         with:
-          artifact-path: artifact
+          artifact-path: artifact/
           
       - name: Upload Provenance
         uses: actions/upload-artifact@v3
