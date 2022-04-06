@@ -29,4 +29,29 @@ jobs:
         image: ghcr.io/bananth2008/signedcontainer:1910545656
         registry-username: bananth2008
         registry-password: ${{secrets.GITHUB_TOKEN}}
+  
+  Provenance-Generation:
+    needs: Anchore-Build-Scan
+    runs-on: ubuntu-latest
+    name: Generate Build Provenance
+    steps:
+      - name: Download Build Artifact
+        uses: actions/download-artifact@v2
+      
+      - name: Generate Provinenace
+        uses: philips-labs/salsa-provenance-action@v0.7.2
+        with:
+          command: generate
+          sub-command: files
+          arguments: --artifact-path artifact/ --output-path provenance.json
+          
+      - name: Upload Provenance
+        uses: actions/upload-artifact@v2
+        with:
+          path: provenance.json
+      
+      
+    
+    
+    
         
